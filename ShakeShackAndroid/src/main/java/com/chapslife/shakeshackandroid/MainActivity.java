@@ -18,6 +18,9 @@ import android.support.v4.widget.DrawerLayout;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
+import com.chapslife.shakeshackandroid.fragments.CustardCalendarFragment;
+import com.chapslife.shakeshackandroid.fragments.ShakeCameraFragment;
+
 public class MainActivity extends Activity
         implements NavigationDrawerFragment.NavigationDrawerCallbacks {
 
@@ -50,15 +53,26 @@ public class MainActivity extends Activity
     public void onNavigationDrawerItemSelected(int position) {
         // update the main content by replacing fragments
         FragmentManager fragmentManager = getFragmentManager();
-        fragmentManager.beginTransaction()
-                .replace(R.id.container, PlaceholderFragment.newInstance(position + 1))
-                .commit();
+        if(position == 0){
+            fragmentManager.beginTransaction()
+                    .replace(R.id.container, ShakeCameraFragment.newInstance())
+                    .commit();
+        }else if(position == 1){
+            fragmentManager.beginTransaction()
+                    .replace(R.id.container, CustardCalendarFragment.newInstance())
+                    .commit();
+        }else{
+            fragmentManager.beginTransaction()
+                    .replace(R.id.container, PlaceholderFragment.newInstance(position + 1))
+                    .commit();
+        }
+
     }
 
     public void onSectionAttached(int number) {
         switch (number) {
             case 1:
-                mTitle = getString(R.string.title_section1);
+                mTitle = getString(R.string.title_shake_camera);
                 break;
             case 2:
                 mTitle = getString(R.string.title_section2);

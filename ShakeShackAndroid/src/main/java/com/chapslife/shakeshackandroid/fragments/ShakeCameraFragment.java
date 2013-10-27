@@ -91,10 +91,9 @@ public class ShakeCameraFragment extends Fragment {
         }
 
         protected void onPostExecute(Bitmap result) {
-            if(mShakeCamera.getDrawable() != null && ((BitmapDrawable)mShakeCamera.getDrawable()).getBitmap() != null){
-                ((BitmapDrawable)mShakeCamera.getDrawable()).getBitmap().recycle();
+            if(result != null){
+                mShakeCamera.setImageBitmap(result);
             }
-            mShakeCamera.setImageBitmap(result);
         }
     }
 

@@ -12,6 +12,13 @@
     <string name="action_example">Example action</string>
     <string name="action_settings">Settings</string>
     <string name="title_shake_camera">Shake Camera</string>
+    <string name="menus">Menus</string>
+
+    <string-array name="nav_list">
+        <item>Shake Camera</item>
+        <item>Menus</item>
+        <item>Custards</item>
+    </string-array>
 
     <string-array name="action_list">
         <item>New Haven,CT</item>

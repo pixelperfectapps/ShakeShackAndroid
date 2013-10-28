@@ -25,12 +25,14 @@ import com.chapslife.shakeshackandroid.fragments.ShakeCameraFragment;
 import com.chapslife.shakeshackandroid.utils.Constants;
 
 public class MainActivity extends Activity
-        implements NavigationDrawerFragment.NavigationDrawerCallbacks, ActionBar.OnNavigationListener {
+        implements NavigationDrawerFragment.NavigationDrawerCallbacks, ActionBar.OnNavigationListener, DrawerLayout.DrawerListener {
 
     /**
      * Fragment managing the behaviors, interactions and presentation of the navigation drawer.
      */
     private NavigationDrawerFragment mNavigationDrawerFragment;
+
+    public DrawerLayout mDrawerLayout;
 
     /**
      * Used to store the last screen title. For use in {@link #restoreActionBar()}.
@@ -46,9 +48,14 @@ public class MainActivity extends Activity
                 getFragmentManager().findFragmentById(R.id.navigation_drawer);
         mTitle = getTitle();
 
-        SpinnerAdapter mSpinnerAdapter = ArrayAdapter.createFromResource(this, R.array.action_list,
+        mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
+        mDrawerLayout.setDrawerListener(this);
+
+        SpinnerAdapter mSpinnerAdapter = ArrayAdapter.createFromResource(this, R.array.nav_list,
                 android.R.layout.simple_spinner_dropdown_item);
         getActionBar().setListNavigationCallbacks(mSpinnerAdapter, this);
+        getActionBar().setNavigationMode(ActionBar.NAVIGATION_MODE_LIST);
+        getActionBar().setDisplayShowTitleEnabled(false);
         // Set up the drawer.
         mNavigationDrawerFragment.setUp(
                 R.id.navigation_drawer,
@@ -59,81 +66,7 @@ public class MainActivity extends Activity
     public void onNavigationDrawerItemSelected(int position) {
         // update the main content by replacing fragments
         FragmentManager fragmentManager = getFragmentManager();
-        ActionBar actionBar = getActionBar();
-        if(position == 0){
-            fragmentManager.beginTransaction()
-                    .replace(R.id.container, ShakeCameraFragment.newInstance())
-                    .commit();
-            actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_STANDARD);
-            actionBar.setDisplayShowTitleEnabled(true);
-        }else if(position == 1){
-            fragmentManager.beginTransaction()
-                    .replace(R.id.container, MenusFragment.newInstance(Constants.MENU_MSP))
-                    .commit();
-            actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_LIST);
-            actionBar.setSelectedNavigationItem(5);
-            actionBar.setDisplayShowTitleEnabled(false);
-        }else{
-            fragmentManager.beginTransaction()
-                    .replace(R.id.container, CustardCalendarFragment.newInstance())
-                    .commit();
-            actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_STANDARD);
-            actionBar.setDisplayShowTitleEnabled(true);
-        }
-
-    }
-
-    public void onSectionAttached(int number) {
-        switch (number) {
-            case 1:
-                mTitle = getString(R.string.title_shake_camera);
-                break;
-            case 2:
-                mTitle = getString(R.string.title_menus);
-                break;
-            case 3:
-                mTitle = getString(R.string.title_custards);
-                break;
-        }
-    }
-
-    public void restoreActionBar() {
-        ActionBar actionBar = getActionBar();
-        if(mNavigationDrawerFragment.getCurrentSelectedNavItem() == 1){
-            actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_LIST);
-            actionBar.setDisplayShowTitleEnabled(false);
-        }else{
-            actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_STANDARD);
-            actionBar.setDisplayShowTitleEnabled(true);
-        }
-
-        actionBar.setTitle(mTitle);
-    }
-
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        if (!mNavigationDrawerFragment.isDrawerOpen()) {
-            // Only show items in the action bar relevant to this screen
-            // if the drawer is not showing. Otherwise, let the drawer
-            // decide what to show in the action bar.
-            restoreActionBar();
-            return true;
-        }
-        return super.onCreateOptionsMenu(menu);
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-
-        return super.onOptionsItemSelected(item);
-    }
-
-    @Override
-    public boolean onNavigationItemSelected(int itemPosition, long itemId) {
-        // update the main content by replacing fragments
-        FragmentManager fragmentManager = getFragmentManager();
-        switch(itemPosition){
+        switch(position){
             case 0:
                 fragmentManager.beginTransaction()
                         .replace(R.id.container, MenusFragment.newInstance(Constants.MENU_NEW_HAVEN))
@@ -255,6 +188,87 @@ public class MainActivity extends Activity
                         .commit();
                 break;
         }
+    }
+
+    public void onSectionAttached(int number) {
+        switch (number) {
+            case 1:
+                mTitle = getString(R.string.title_shake_camera);
+                break;
+            case 2:
+                mTitle = getString(R.string.title_menus);
+                break;
+            case 3:
+                mTitle = getString(R.string.title_custards);
+                break;
+        }
+    }
+
+    public void restoreActionBar() {
+        ActionBar actionBar = getActionBar();
+        actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_LIST);
+    }
+
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        if (!mNavigationDrawerFragment.isDrawerOpen()) {
+            // Only show items in the action bar relevant to this screen
+            // if the drawer is not showing. Otherwise, let the drawer
+            // decide what to show in the action bar.
+            restoreActionBar();
+            return true;
+        }
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+
+        return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public boolean onNavigationItemSelected(int itemPosition, long itemId) {
+        FragmentManager fragmentManager = getFragmentManager();
+        if(itemPosition == 0){
+            fragmentManager.beginTransaction()
+                    .replace(R.id.container, ShakeCameraFragment.newInstance())
+                    .commit();
+        }else if(itemPosition == 1){
+            fragmentManager.beginTransaction()
+                    .replace(R.id.container, MenusFragment.newInstance(Constants.MENU_MSP))
+                    .commit();
+        }else{
+            fragmentManager.beginTransaction()
+                    .replace(R.id.container, CustardCalendarFragment.newInstance())
+                    .commit();
+        }
+        // update the main content by replacing fragments
+
         return false;
+    }
+
+    @Override
+    public void onDrawerSlide(View view, float v) {
+
+    }
+
+    @Override
+    public void onDrawerOpened(View view) {
+        getActionBar().setNavigationMode(ActionBar.NAVIGATION_MODE_STANDARD);
+        getActionBar().setDisplayShowTitleEnabled(true);
+        getActionBar().setTitle(R.string.app_name);
+    }
+
+    @Override
+    public void onDrawerClosed(View view) {
+        getActionBar().setNavigationMode(ActionBar.NAVIGATION_MODE_LIST);
+        getActionBar().setDisplayShowTitleEnabled(false);
+    }
+
+    @Override
+    public void onDrawerStateChanged(int i) {
+
     }
 }

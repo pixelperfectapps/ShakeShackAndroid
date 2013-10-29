@@ -1,9 +1,10 @@
 <ListView xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/ListViewshakeshackhcg"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:choiceMode="singleChoice"
     android:divider="@android:color/transparent"
     android:dividerHeight="0dp"
-    android:background="#cccc"
+    android:background="#FF2E2A2B"
     tools:context="com.chapslife.shakeshackandroid.NavigationDrawerFragment" />

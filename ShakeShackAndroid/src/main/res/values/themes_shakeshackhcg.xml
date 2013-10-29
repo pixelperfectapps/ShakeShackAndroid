@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- Generated with http://android-holo-colors.com -->
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+
+  <style name="shakeshackhcg" parent="Theme.Shakeshackabsg">
+
+    <item name="android:editTextStyle">@style/EditTextshakeshackhcg</item>
+
+    <item name="android:autoCompleteTextViewStyle">@style/AutoCompleteTextViewshakeshackhcg</item>
+
+    <item name="android:checkboxStyle">@style/CheckBoxshakeshackhcg</item>
+
+    <item name="android:radioButtonStyle">@style/RadioButtonshakeshackhcg</item>
+
+    <item name="android:buttonStyle">@style/Buttonshakeshackhcg</item>
+
+    <item name="android:imageButtonStyle">@style/ImageButtonshakeshackhcg</item>
+
+    <item name="android:spinnerStyle">@style/Spinnershakeshackhcg</item>
+
+    <item name="android:dropDownSpinnerStyle">@style/Spinnershakeshackhcg.DropDown</item>
+
+    <item name="android:spinnerDropDownItemStyle">@style/SpinnerDropDownItemshakeshackhcg</item>
+
+    <item name="android:progressBarStyleHorizontal">@style/ProgressBarshakeshackhcg</item>
+
+    <item name="android:seekBarStyle">@style/SeekBarshakeshackhcg</item>
+
+    <item name="android:ratingBarStyle">@style/RatingBarshakeshackhcg</item>
+
+    <item name="android:ratingBarStyleIndicator">@style/RatingBarBigshakeshackhcg</item>
+
+    <item name="android:ratingBarStyleSmall">@style/RatingBarSmallshakeshackhcg</item>
+
+    <item name="android:buttonStyleToggle">@style/Toggleshakeshackhcg</item>
+
+    <item name="android:listViewStyle">@style/ListViewshakeshackhcg</item>
+
+    <item name="android:listViewWhiteStyle">@style/ListViewshakeshackhcg.White</item>
+
+    <item name="android:spinnerItemStyle">@style/SpinnerItemshakeshackhcg</item>
+
+    <!-- <item name="numberPickerStyle">@style/NumberPickershakeshackhcg</item> -->
+
+  </style>
+
+</resources>

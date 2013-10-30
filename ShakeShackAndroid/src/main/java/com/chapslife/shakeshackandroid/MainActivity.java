@@ -20,6 +20,7 @@ import android.widget.SpinnerAdapter;
 import android.widget.TextView;
 
 import com.chapslife.shakeshackandroid.fragments.CustardCalendarFragment;
+import com.chapslife.shakeshackandroid.fragments.LocationsMapFragment;
 import com.chapslife.shakeshackandroid.fragments.MenusFragment;
 import com.chapslife.shakeshackandroid.fragments.ShakeCameraFragment;
 import com.chapslife.shakeshackandroid.utils.Constants;
@@ -239,9 +240,13 @@ public class MainActivity extends Activity
             fragmentManager.beginTransaction()
                     .replace(R.id.container, MenusFragment.newInstance(Constants.MENU_MSP))
                     .commit();
-        }else{
+        }else if(itemPosition == 2){
             fragmentManager.beginTransaction()
                     .replace(R.id.container, CustardCalendarFragment.newInstance())
+                    .commit();
+        }else if(itemPosition == 3){
+            fragmentManager.beginTransaction()
+                    .replace(R.id.container, LocationsMapFragment.newInstance())
                     .commit();
         }
         // update the main content by replacing fragments

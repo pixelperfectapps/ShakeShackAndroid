@@ -13,11 +13,13 @@
     <string name="action_settings">Settings</string>
     <string name="title_shake_camera">Shake Camera</string>
     <string name="switch_locations">Switch Locations</string>
+    <string name="map_api_key">AIzaSyCNwA3v9SkkK2s7KftxZY7aCdy9h5fOPHI</string>
 
     <string-array name="nav_list">
         <item>Shake Camera</item>
         <item>Menus</item>
         <item>Custards</item>
+        <item>Locations</item>
     </string-array>
 
     <string-array name="action_list">

@@ -2,9 +2,11 @@ package com.chapslife.shakeshackandroid.fragments;
 
 import android.app.Activity;
 import android.app.Fragment;
+import android.content.Intent;
 import android.location.Criteria;
 import android.location.Location;
 import android.location.LocationManager;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -20,6 +22,7 @@ import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.MapFragment;
 import com.google.android.gms.maps.UiSettings;
+import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
@@ -90,74 +93,120 @@ public class LocationsMapFragment extends MapFragment implements GooglePlayServi
     private void addMarkers(){
         googleMap.addMarker(new MarkerOptions()
                 .position(Constants.LATLNG_BKLYN)
+                        //.icon(BitmapDescriptorFactory.fromResource(R.drawable.ic_action_place_green))
+                .snippet(Constants.URL_BKLYN)
                 .title(Constants.BKLYN));
         googleMap.addMarker(new MarkerOptions()
                 .position(Constants.LATLNG_BPC)
+                        //.icon(BitmapDescriptorFactory.fromResource(R.drawable.ic_action_place_green))
+                .snippet(Constants.URL_BPC)
                 .title(Constants.BPC));
         googleMap.addMarker(new MarkerOptions()
                 .position(Constants.LATLNG_GST)
+                        //.icon(BitmapDescriptorFactory.fromResource(R.drawable.ic_action_place_green))
+                .snippet(Constants.URL_GST)
                 .title(Constants.GST));
         googleMap.addMarker(new MarkerOptions()
                 .position(Constants.LATLNG_JFK_T4)
+                        //.icon(BitmapDescriptorFactory.fromResource(R.drawable.ic_action_place_green))
+                .snippet(Constants.URL_JFK_T4)
                 .title(Constants.JFK_T4));
         googleMap.addMarker(new MarkerOptions()
                 .position(Constants.LATLNG_MSP)
+                        //.icon(BitmapDescriptorFactory.fromResource(R.drawable.ic_action_place_green))
+                .snippet(Constants.URL_MSP)
                 .title(Constants.MSP));
         googleMap.addMarker(new MarkerOptions()
                 .position(Constants.LATLNG_SHITI_FIELD)
+                        //.icon(BitmapDescriptorFactory.fromResource(R.drawable.ic_action_place_green))
+                .snippet(Constants.URL_SHITI_FIELD)
                 .title(Constants.SHITI_FIELD));
         googleMap.addMarker(new MarkerOptions()
                 .position(Constants.LATLNG_SSNY)
+                        //.icon(BitmapDescriptorFactory.fromResource(R.drawable.ic_action_place_green))
+                .snippet(Constants.URL_SSNY)
                 .title(Constants.SSNY));
         googleMap.addMarker(new MarkerOptions()
                 .position(Constants.LATLNG_TD)
+                        //.icon(BitmapDescriptorFactory.fromResource(R.drawable.ic_action_place_green))
+                .snippet(Constants.URL_TD)
                 .title(Constants.TD));
         googleMap.addMarker(new MarkerOptions()
                 .position(Constants.LATLNG_UES)
+                        //.icon(BitmapDescriptorFactory.fromResource(R.drawable.ic_action_place_green))
+                .snippet(Constants.URL_UES)
                 .title(Constants.UES));
         googleMap.addMarker(new MarkerOptions()
                 .position(Constants.LATLNG_UWS)
+                        //.icon(BitmapDescriptorFactory.fromResource(R.drawable.ic_action_place_green))
+                .snippet(Constants.URL_UWS)
                 .title(Constants.UWS));
         googleMap.addMarker(new MarkerOptions()
                 .position(Constants.LATLNG_WBY)
+                        //.icon(BitmapDescriptorFactory.fromResource(R.drawable.ic_action_place_green))
+                .snippet(Constants.URL_WBY)
                 .title(Constants.WBY));
         googleMap.addMarker(new MarkerOptions()
                 .position(Constants.LATLNG_WESTPORT)
+                        //.icon(BitmapDescriptorFactory.fromResource(R.drawable.ic_action_place_green))
+                .snippet(Constants.URL_WESTPORT)
                 .title(Constants.WESTPORT));
         googleMap.addMarker(new MarkerOptions()
                 .position(Constants.LATLNG_NEW_HAVEN)
+                        //.icon(BitmapDescriptorFactory.fromResource(R.drawable.ic_action_place_green))
+                .snippet(Constants.URL_NEW_HAVEN)
                 .title(Constants.NEW_HAVEN));
         googleMap.addMarker(new MarkerOptions()
                 .position(Constants.LATLNG_S_BEACH)
+                        //.icon(BitmapDescriptorFactory.fromResource(R.drawable.ic_action_place_green))
+                .snippet(Constants.URL_S_BEACH)
                 .title(Constants.S_BEACH));
         googleMap.addMarker(new MarkerOptions()
                 .position(Constants.LATLNG_CORAL_GABLES)
+                        //.icon(BitmapDescriptorFactory.fromResource(R.drawable.ic_action_place_green))
+                .snippet(Constants.URL_CORAL_GABLES)
                 .title(Constants.CORAL_GABLES));
         googleMap.addMarker(new MarkerOptions()
                 .position(Constants.LATLNG_BOCA)
+                //.icon(BitmapDescriptorFactory.fromResource(R.drawable.ic_action_place_green))
+                .snippet(Constants.URL_BOCA)
                 .title(Constants.BOCA));
         googleMap.addMarker(new MarkerOptions()
                 .position(Constants.LATLNG_CENTER_CITY)
+                        //.icon(BitmapDescriptorFactory.fromResource(R.drawable.ic_action_place_green))
+                .snippet(Constants.URL_CENTER_CITY)
                 .title(Constants.CENTER_CITY));
         googleMap.addMarker(new MarkerOptions()
                 .position(Constants.LATLNG_U_CITY)
+                        //.icon(BitmapDescriptorFactory.fromResource(R.drawable.ic_action_place_green))
+                .snippet(Constants.URL_U_CITY)
                 .title(Constants.U_CITY));
         googleMap.addMarker(new MarkerOptions()
                 .position(Constants.LATLNG_KOP)
+                        //.icon(BitmapDescriptorFactory.fromResource(R.drawable.ic_action_place_green))
+                .snippet(Constants.URL_KOP)
                 .title(Constants.KOP));
         googleMap.addMarker(new MarkerOptions()
                 .position(Constants.LATLNG_DUPONT_CIRCLE)
+                        //.icon(BitmapDescriptorFactory.fromResource(R.drawable.ic_action_place_green))
+                .snippet(Constants.URL_DUPONT_CIRCLE)
                 .title(Constants.DUPONT_CIRCLE));
         googleMap.addMarker(new MarkerOptions()
                 .position(Constants.LATLNG_NATS_PARK)
+                        //.icon(BitmapDescriptorFactory.fromResource(R.drawable.ic_action_place_green))
+                .snippet(Constants.URL_NATS_PARK)
                 .title(Constants.NATS_PARK));
         googleMap.addMarker(new MarkerOptions()
                 .position(Constants.LATLNG_F_STREET)
+                        //.icon(BitmapDescriptorFactory.fromResource(R.drawable.ic_action_place_green))
                 .title(Constants.F_STREET));
         googleMap.addMarker(new MarkerOptions()
                 .position(Constants.LATLNG_CHESNUT_HILL)
+                        //.icon(BitmapDescriptorFactory.fromResource(R.drawable.ic_action_place_green))
+                .snippet(Constants.URL_CHESNUT_HILL)
                 .title(Constants.CHESNUT_HILL));
     }
+    
     @Override
     public void onDisconnected() {
 
@@ -176,7 +225,10 @@ public class LocationsMapFragment extends MapFragment implements GooglePlayServi
 
     @Override
     public void onInfoWindowClick(Marker marker) {
-
+        if(marker.getSnippet() != null && marker.getSnippet().length() > 0){
+            Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(marker.getSnippet()));
+            startActivity(intent);
+        }
     }
 
     @Override

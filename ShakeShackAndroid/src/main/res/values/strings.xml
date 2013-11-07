@@ -23,11 +23,11 @@
     </string-array>
 
     <string-array name="action_list">
-        <item>New Haven,CT</item>
-        <item>Westport,CT</item>
-        <item>South Beach,FL</item>
-        <item>Coral Gables,FL</item>
-        <item>Boca Raton,FL</item>
+        <item>New Haven, CT</item>
+        <item>Westport, CT</item>
+        <item>South Beach, FL</item>
+        <item>Coral Gables, FL</item>
+        <item>Boca Raton, FL</item>
         <item>Madison Sq Park</item>
         <item>Battery Pk City</item>
         <item>Theater District</item>
@@ -36,15 +36,15 @@
         <item>Brooklyn</item>
         <item>Grand Central</item>
         <item>JFK</item>
-        <item>Westbury,LI</item>
+        <item>Westbury, LI</item>
         <item>Saratoga</item>
         <item>Citi Field</item>
-        <item>Center City,Phila</item>
-        <item>U. City,Phila</item>
-        <item>King of Prussia,PA</item>
-        <item>DuPont Circle,DC</item>
-        <item>Nats Park,DC</item>
-        <item>F Street,DC</item>
-        <item>Chestnut Hill,MA</item>
+        <item>Center City, Phila</item>
+        <item>U. City, Phila</item>
+        <item>King of Prussia, PA</item>
+        <item>DuPont Circle, DC</item>
+        <item>Nats Park, DC</item>
+        <item>F Street, DC</item>
+        <item>Chestnut Hill, MA</item>
     </string-array>
 </resources>

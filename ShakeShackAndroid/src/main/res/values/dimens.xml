@@ -8,4 +8,5 @@
     <dimen name="navigation_drawer_width">240dp</dimen>
     <!-- Android Holo Colors -->
         <dimen name="tab_host_default_height">48dp</dimen>
+    <dimen name="info_window_adapter_height">32dp</dimen>
 </resources>

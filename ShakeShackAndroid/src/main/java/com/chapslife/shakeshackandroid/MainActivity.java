@@ -20,6 +20,7 @@ import android.widget.SpinnerAdapter;
 import android.widget.TextView;
 
 import com.chapslife.shakeshackandroid.fragments.CustardCalendarFragment;
+import com.chapslife.shakeshackandroid.fragments.LocationsMapFragment;
 import com.chapslife.shakeshackandroid.fragments.MenusFragment;
 import com.chapslife.shakeshackandroid.fragments.ShakeCameraFragment;
 import com.chapslife.shakeshackandroid.utils.Constants;
@@ -66,128 +67,9 @@ public class MainActivity extends Activity
     public void onNavigationDrawerItemSelected(int position) {
         // update the main content by replacing fragments
         FragmentManager fragmentManager = getFragmentManager();
-        switch(position){
-            case 0:
-                fragmentManager.beginTransaction()
-                        .replace(R.id.container, MenusFragment.newInstance(Constants.MENU_NEW_HAVEN))
-                        .commit();
-                break;
-            case 1:
-                fragmentManager.beginTransaction()
-                        .replace(R.id.container, MenusFragment.newInstance(Constants.MENU_WESTPORT))
-                        .commit();
-                break;
-            case 2:
-                fragmentManager.beginTransaction()
-                        .replace(R.id.container, MenusFragment.newInstance(Constants.MENU_S_BEACH))
-                        .commit();
-                break;
-            case 3:
-                fragmentManager.beginTransaction()
-                        .replace(R.id.container, MenusFragment.newInstance(Constants.MENU_CORAL_GABLES))
-                        .commit();
-                break;
-            case 4:
-                fragmentManager.beginTransaction()
-                        .replace(R.id.container, MenusFragment.newInstance(Constants.MENU_BOCA))
-                        .commit();
-                break;
-            case 5:
-                fragmentManager.beginTransaction()
-                        .replace(R.id.container, MenusFragment.newInstance(Constants.MENU_MSP))
-                        .commit();
-                break;
-            case 6:
-                fragmentManager.beginTransaction()
-                        .replace(R.id.container, MenusFragment.newInstance(Constants.MENU_BPC))
-                        .commit();
-                break;
-            case 7:
-                fragmentManager.beginTransaction()
-                        .replace(R.id.container, MenusFragment.newInstance(Constants.MENU_TD))
-                        .commit();
-                break;
-            case 8:
-                fragmentManager.beginTransaction()
-                        .replace(R.id.container, MenusFragment.newInstance(Constants.MENU_UES))
-                        .commit();
-                break;
-            case 9:
-                fragmentManager.beginTransaction()
-                        .replace(R.id.container, MenusFragment.newInstance(Constants.MENU_UWS))
-                        .commit();
-                break;
-            case 10:
-                fragmentManager.beginTransaction()
-                        .replace(R.id.container, MenusFragment.newInstance(Constants.MENU_BKLYN))
-                        .commit();
-                break;
-            case 11:
-                fragmentManager.beginTransaction()
-                        .replace(R.id.container, MenusFragment.newInstance(Constants.MENU_GST))
-                        .commit();
-                break;
-            case 12:
-                fragmentManager.beginTransaction()
-                        .replace(R.id.container, MenusFragment.newInstance(Constants.MENU_JFK_T4))
-                        .commit();
-                break;
-            case 13:
-                fragmentManager.beginTransaction()
-                        .replace(R.id.container, MenusFragment.newInstance(Constants.MENU_WBY))
-                        .commit();
-                break;
-            case 14:
-                fragmentManager.beginTransaction()
-                        .replace(R.id.container, MenusFragment.newInstance(Constants.MENU_SSNY))
-                        .commit();
-                break;
-            case 15:
-                fragmentManager.beginTransaction()
-                        .replace(R.id.container, MenusFragment.newInstance(Constants.MENU_SHITI_FIELD))
-                        .commit();
-                break;
-            case 16:
-                fragmentManager.beginTransaction()
-                        .replace(R.id.container, MenusFragment.newInstance(Constants.MENU_CENTER_CITY))
-                        .commit();
-                break;
-            case 17:
-                fragmentManager.beginTransaction()
-                        .replace(R.id.container, MenusFragment.newInstance(Constants.MENU_U_CITY))
-                        .commit();
-                break;
-            case 18:
-                fragmentManager.beginTransaction()
-                        .replace(R.id.container, MenusFragment.newInstance(Constants.MENU_KOP))
-                        .commit();
-                break;
-            case 19:
-                fragmentManager.beginTransaction()
-                        .replace(R.id.container, MenusFragment.newInstance(Constants.MENU_DUPONT_CIRCLE))
-                        .commit();
-                break;
-            case 20:
-                fragmentManager.beginTransaction()
-                        .replace(R.id.container, MenusFragment.newInstance(Constants.MENU_NATS_PARK))
-                        .commit();
-                break;
-            case 21:
-                fragmentManager.beginTransaction()
-                        .replace(R.id.container, MenusFragment.newInstance(Constants.MENU_F_STREET))
-                        .commit();
-                break;
-            case 22:
-                fragmentManager.beginTransaction()
-                        .replace(R.id.container, MenusFragment.newInstance(Constants.MENU_CHESNUT_HILL))
-                        .commit();
-                break;
-            default:
-                fragmentManager.beginTransaction()
-                        .replace(R.id.container, MenusFragment.newInstance(Constants.MENU_MSP))
-                        .commit();
-                break;
-        }
+        fragmentManager.beginTransaction()
+                .replace(R.id.container, MenusFragment.newInstance(ShakeShackAndroid.sShackLocations.get(position).menuUrl))
+                .commit();
     }
 
     public void onSectionAttached(int number) {
@@ -239,9 +121,13 @@ public class MainActivity extends Activity
             fragmentManager.beginTransaction()
                     .replace(R.id.container, MenusFragment.newInstance(Constants.MENU_MSP))
                     .commit();
-        }else{
+        }else if(itemPosition == 2){
             fragmentManager.beginTransaction()
                     .replace(R.id.container, CustardCalendarFragment.newInstance())
+                    .commit();
+        }else if(itemPosition == 3){
+            fragmentManager.beginTransaction()
+                    .replace(R.id.container, LocationsMapFragment.newInstance())
                     .commit();
         }
         // update the main content by replacing fragments

@@ -13,19 +13,21 @@
     <string name="action_settings">Settings</string>
     <string name="title_shake_camera">Shake Camera</string>
     <string name="switch_locations">Switch Locations</string>
+    <string name="map_api_key">AIzaSyCNwA3v9SkkK2s7KftxZY7aCdy9h5fOPHI</string>
 
     <string-array name="nav_list">
         <item>Shake Camera</item>
         <item>Menus</item>
         <item>Custards</item>
+        <item>Locations</item>
     </string-array>
 
     <string-array name="action_list">
-        <item>New Haven,CT</item>
-        <item>Westport,CT</item>
-        <item>South Beach,FL</item>
-        <item>Coral Gables,FL</item>
-        <item>Boca Raton,FL</item>
+        <item>New Haven, CT</item>
+        <item>Westport, CT</item>
+        <item>South Beach, FL</item>
+        <item>Coral Gables, FL</item>
+        <item>Boca Raton, FL</item>
         <item>Madison Sq Park</item>
         <item>Battery Pk City</item>
         <item>Theater District</item>
@@ -34,15 +36,15 @@
         <item>Brooklyn</item>
         <item>Grand Central</item>
         <item>JFK</item>
-        <item>Westbury,LI</item>
+        <item>Westbury, LI</item>
         <item>Saratoga</item>
         <item>Citi Field</item>
-        <item>Center City,Phila</item>
-        <item>U. City,Phila</item>
-        <item>King of Prussia,PA</item>
-        <item>DuPont Circle,DC</item>
-        <item>Nats Park,DC</item>
-        <item>F Street,DC</item>
-        <item>Chestnut Hill,MA</item>
+        <item>Center City, Phila</item>
+        <item>U. City, Phila</item>
+        <item>King of Prussia, PA</item>
+        <item>DuPont Circle, DC</item>
+        <item>Nats Park, DC</item>
+        <item>F Street, DC</item>
+        <item>Chestnut Hill, MA</item>
     </string-array>
 </resources>
